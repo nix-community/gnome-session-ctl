@@ -7,10 +7,7 @@ project(
 )
 
 version = meson.project_version()
-version_array = version.split('.')
-major_version = version_array[0].to_int()
-api_version = '@0@.0'.format(major_version)
-api_name = '@0@-@1@'.format(meson.project_name(), api_version)
+api_name = '@0@-@1@'.format(meson.project_name(), version.split('.')[0])
 
 prefix = get_option('prefix')
 localedir = prefix / get_option('localedir')
