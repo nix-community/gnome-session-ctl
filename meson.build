@@ -1,6 +1,6 @@
 project(
   'gnome-session-ctl', 'c',
-  version: '3.38.0', # same as gnome-session
+  version: '40.0', # same as gnome-session
   license: 'GPL2+',
   default_options: 'buildtype=debugoptimized',
   meson_version: '>= 0.53.0'
