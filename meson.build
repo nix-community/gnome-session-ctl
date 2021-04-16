@@ -34,10 +34,6 @@ config_h = configuration_data()
 
 # defines
 set_defines = [
-  # package
-  ['PACKAGE', meson.project_name()],
-  ['PACKAGE_VERSION', version],
-  ['VERSION', version],
   # i18n
   ['GETTEXT_PACKAGE', api_name]
 ]
