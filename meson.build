@@ -1,9 +1,9 @@
 project(
   'gnome-session-ctl', 'c',
-  version: '49.0', # same as gnome-session
+  version: '50.0', # same as gnome-session
   license: 'GPL2+',
   default_options: 'buildtype=debugoptimized',
-  meson_version: '>= 0.53.0'
+  meson_version: '>= 0.60.0'
 )
 
 version = meson.project_version()
@@ -13,11 +13,11 @@ prefix = get_option('prefix')
 localedir = prefix / get_option('localedir')
 libexecdir = prefix / get_option('libexecdir')
 
-glib_req_version = '>= 2.46.0'
+glib_req_version = '>= 2.82.0'
 
 gio_dep = dependency('gio-2.0', version: glib_req_version)
 glib_dep = dependency('glib-2.0', version: glib_req_version)
-libsystemd_dep = dependency('libsystemd', version: '>= 209', required: false)
+libsystemd_dep = dependency('libsystemd', version: '>= 209', required: true)
 
 deps = [
   gio_dep,
