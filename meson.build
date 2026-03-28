@@ -9,6 +9,9 @@ project(
 version = meson.project_version()
 api_name = '@0@-@1@'.format(meson.project_name(), version.split('.')[0])
 
+# used in https://gitlab.gnome.org/GNOME/gnome-session/-/blob/main/po/meson.build
+session_api_name = api_name
+
 prefix = get_option('prefix')
 localedir = prefix / get_option('localedir')
 libexecdir = prefix / get_option('libexecdir')
@@ -38,6 +41,12 @@ set_defines = [
 foreach define: set_defines
   config_h.set_quoted(define[0], define[1])
 endforeach
+
+i18n = import('i18n')
+fs = import('fs')
+if fs.exists('po')
+  subdir('po')
+endif
 
 configure_file(
   output: 'config.h',
